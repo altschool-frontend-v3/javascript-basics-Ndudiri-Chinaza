@@ -14,13 +14,20 @@ const assignment = {};
  * @param {Number} destination is the stopping number
  * @returns number the sum of the numbers from 1 to destination
  */
-function sumOfNumbersTo(destination) {
+const sumOfNumbersTo = function(destination) {
     let sum = 0;
+    for(i = 1; i <= destination; i++){
+        sum = sum + i;
+    }
     return sum
-}
+};
 
 
-// assignment.sumOfNumbersTo = sumOfNumbersTo;
+assignment.sumOfNumbersTo = sumOfNumbersTo;
+
+
+
+
 
 /**
  * Challenge - 2
@@ -32,12 +39,20 @@ function sumOfNumbersTo(destination) {
  * @param {Number} destination the stopping number
  * @returns the object containing count, sum, arrayOfEvenNumbers from 1 to destination
  */
-function countEvenNumbersWithin(destination) {
+const countEvenNumbersWithin = function(destination) {
     // Write your code here
     // get the number from 1 to destination
     let sum = 0;
     let count = 0;
     let arrayOfEvenNumbers = [];
+
+    for(i = 1; i <= destination; i++){
+        if(i % 2 === 0){
+            sum = sum + i;
+            count++
+            arrayOfEvenNumbers.push(i)
+        }
+    };
 
     return {
         // property value shorthand
@@ -47,9 +62,11 @@ function countEvenNumbersWithin(destination) {
         sum,
         arrayOfEvenNumbers
     };
-}
+};
 
-// assignment.countEvenNumbersWithin = countEvenNumbersWithin;
+
+assignment.countEvenNumbersWithin = countEvenNumbersWithin;
+
 
 /**
  * Challenge - 3
@@ -66,13 +83,18 @@ function countEvenNumbersWithin(destination) {
  * @param {Array} arrayOfNumbers the array containing temperatures in Celsius to be converted
  * @returns Array the converted temperatures in Fahrenheit
  */
-function celsiusToFahrenheit(arrayOfNumbers) {
+const celsiusToFahrenheit = function(arrayOfNumbers) {
     let result = [];
+    result = arrayOfNumbers.map(el => Math.trunc((el * 1.8) + 32))
 
     return result;
-}
+};
 
-// assignment.celsiusToFahrenheit = celsiusToFahrenheit;
+assignment.celsiusToFahrenheit = celsiusToFahrenheit;
+
+
+
+
 
 // ========================
 // DO NOT EDIT THIS BLOCK
